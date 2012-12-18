@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">SImpleInAppBillingV3</string>
+  <string name="hello_world">Hello world!</string>
+  <string name="menu_settings">Settings</string>
+  <string name="main_button_purchase_passport_text">Purchase Passport</string>
+  <string name="main_cont_desc_image_passport">purchased passport</string>
+
+</resources>
