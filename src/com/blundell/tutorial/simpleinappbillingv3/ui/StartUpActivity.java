@@ -1,6 +1,5 @@
 package com.blundell.tutorial.simpleinappbillingv3.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.vending.billing.util.IabHelper.OnIabSetupFinishedListener;
@@ -8,6 +7,12 @@ import com.android.vending.billing.util.IabResult;
 import com.blundell.tutorial.simpleinappbillingv3.ui.base.PurchaseActivity;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
+/**
+ * Checks that In App Purchasing is available on this device
+ * 
+ * @author Blundell
+ * 
+ */
 public class StartUpActivity extends PurchaseActivity implements OnIabSetupFinishedListener {
 
     @Override
@@ -29,17 +34,12 @@ public class StartUpActivity extends PurchaseActivity implements OnIabSetupFinis
 
     @Override
     protected void dealWithIabSetupSuccess() {
-        gotoMainActivity();
+        navigate().toMainActivity();
         finish();
-    }
-
-    private void gotoMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 
     @Override
     protected void dealWithIabSetupFailure() {
-        popBurntToast("Sorry In App Purchase isn't available on your device");
+        popBurntToast("Sorry In App Billing isn't available on your device");
     }
 }

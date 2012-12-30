@@ -7,11 +7,10 @@ import android.widget.ImageView;
 
 import com.blundell.tutorial.simpleinappbillingv3.R;
 import com.blundell.tutorial.simpleinappbillingv3.ui.base.BlundellActivity;
+import com.blundell.tutorial.simpleinappbillingv3.ui.utils.Navigator;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
 public class MainActivity extends BlundellActivity implements MainMenu {
-
-    private static final int REQUEST_PASSPORT_PURCHASE = 2012;
 
     private ImageView passportImage;
 
@@ -24,18 +23,13 @@ public class MainActivity extends BlundellActivity implements MainMenu {
 
     @Override
     public void onPurchaseItemClick(View v) {
-        gotoPurchasePassportActivity();
-    }
-
-    private void gotoPurchasePassportActivity() {
-        Intent intent = new Intent(this, PurchasePassportActivity.class);
-        startActivityForResult(intent, REQUEST_PASSPORT_PURCHASE);
+        navigate().toPurchasePassportActivityForResult();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (REQUEST_PASSPORT_PURCHASE == requestCode) {
+        if (Navigator.REQUEST_PASSPORT_PURCHASE == requestCode) {
             if (RESULT_OK == resultCode) {
                 dealWithSuccessfulPurchase();
             } else {

@@ -20,7 +20,7 @@ public class PurchasePassportActivity extends PurchaseActivity implements OnIabP
 
     @Override
     protected void dealWithIabSetupFailure() {
-        popBurntToast("Sorry In App Purchase isn't available at this current time");
+        popBurntToast("Sorry buying a passport is not available at this current time");
         finish();
     }
 
