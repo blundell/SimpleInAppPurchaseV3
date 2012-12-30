@@ -334,8 +334,8 @@ public class IabHelper {
         IabResult result;
 
         try {
-            String purchaseToken = "inapp:" + act.getPackageName() + ":android.test.purchased";
-            mService.consumePurchase(3, act.getPackageName(), purchaseToken);
+            //            String purchaseToken = "inapp:" + act.getPackageName() + ":android.test.purchased";
+            //            mService.consumePurchase(3, act.getPackageName(), purchaseToken);
 
             logDebug("Constructing buy intent for " + sku);
             Bundle buyIntentBundle = mService.getBuyIntent(3, mContext.getPackageName(), sku, ITEM_TYPE_INAPP, extraData);
