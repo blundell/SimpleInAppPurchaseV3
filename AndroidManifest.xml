@@ -17,7 +17,8 @@
     android:theme="@style/AppTheme" >
     <activity
       android:name="com.blundell.tutorial.simpleinappbillingv3.ui.StartUpActivity"
-      android:label="@string/activity_startup_label" >
+      android:label="@string/activity_startup_label"
+      android:screenOrientation="portrait" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +27,12 @@
     </activity>
     <activity
       android:name="com.blundell.tutorial.simpleinappbillingv3.ui.MainActivity"
-      android:label="@string/activity_main_label" />
+      android:label="@string/activity_main_label"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.blundell.tutorial.simpleinappbillingv3.ui.PurchasePassportActivity"
-      android:label="@string/activity_purchase_label" />
+      android:label="@string/activity_purchase_label"
+      android:screenOrientation="portrait" />
   </application>
 
 </manifest>

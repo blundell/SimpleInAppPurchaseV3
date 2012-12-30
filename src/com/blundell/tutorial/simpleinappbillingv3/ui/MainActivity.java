@@ -40,6 +40,7 @@ public class MainActivity extends BlundellActivity implements MainMenu {
 
     private void dealWithSuccessfulPurchase() {
         Log.d("Passport purchased");
+        popToast("Passport purchased");
         passportImage.setVisibility(View.VISIBLE);
     }
 
