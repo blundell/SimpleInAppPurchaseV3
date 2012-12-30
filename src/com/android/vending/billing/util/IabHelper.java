@@ -334,6 +334,9 @@ public class IabHelper {
         IabResult result;
 
         try {
+            String purchaseToken = "inapp:" + act.getPackageName() + ":android.test.purchased";
+            mService.consumePurchase(3, act.getPackageName(), purchaseToken);
+
             logDebug("Constructing buy intent for " + sku);
             Bundle buyIntentBundle = mService.getBuyIntent(3, mContext.getPackageName(), sku, ITEM_TYPE_INAPP, extraData);
             int response = getResponseCodeFromBundle(buyIntentBundle);
@@ -344,6 +347,7 @@ public class IabHelper {
                 if (listener != null) {
                     listener.onIabPurchaseFinished(result, null);
                 }
+                return;
             }
 
             PendingIntent pendingIntent = buyIntentBundle.getParcelable(RESPONSE_BUY_INTENT);

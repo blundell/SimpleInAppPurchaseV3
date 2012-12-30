@@ -2,13 +2,12 @@ package com.blundell.tutorial.simpleinappbillingv3.ui;
 
 import android.os.Bundle;
 
-import com.android.vending.billing.util.IabHelper.OnIabPurchaseFinishedListener;
-import com.android.vending.billing.util.*;
+import com.android.vending.billing.util.IabResult;
+import com.android.vending.billing.util.Purchase;
 import com.blundell.tutorial.simpleinappbillingv3.domain.items.Passport;
 import com.blundell.tutorial.simpleinappbillingv3.ui.base.PurchaseActivity;
-import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
-public class PurchasePassportActivity extends PurchaseActivity implements OnIabPurchaseFinishedListener {
+public class PurchasePassportActivity extends PurchaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +25,21 @@ public class PurchasePassportActivity extends PurchaseActivity implements OnIabP
 
     @Override
     protected void dealWithIabSetupSuccess() {
-        getBillingHelper().launchPurchaseFlow(this, Passport.SKU, 123, this);
+        purchaseItem(Passport.SKU);
     }
 
     @Override
-    public void onIabPurchaseFinished(IabResult result, Purchase info) {
-        if (result.isFailure()) {
-            Log.d("Error purchasing: " + result);
-            setResult(RESULT_CANCELED);
-        } else if (Passport.SKU.equals(info.getSku())) {
-            setResult(RESULT_OK);
-        }
+    protected void dealWithPurchaseFailed(IabResult result) {
+        super.dealWithPurchaseFailed(result);
+        setResult(RESULT_CANCELED);
         finish();
     }
+
+    @Override
+    protected void dealWithPurchaseSuccess(IabResult result, Purchase info) {
+        super.dealWithPurchaseSuccess(result, info);
+        setResult(RESULT_OK);
+        finish();
+    }
+
 }
