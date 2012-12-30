@@ -6,6 +6,13 @@ import android.os.Bundle;
 import com.blundell.tutorial.simpleinappbillingv3.ui.utils.Navigator;
 import com.blundell.tutorial.simpleinappbillingv3.ui.utils.Toaster;
 
+/**
+ * Here we keep common functionality that will be used across multiple activities
+ * making our life easier
+ * 
+ * @author Blundell
+ * 
+ */
 public abstract class BlundellActivity extends Activity {
 
     private Navigator navigator;

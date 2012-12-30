@@ -10,6 +10,18 @@ import com.blundell.tutorial.simpleinappbillingv3.AppProperties;
 import com.blundell.tutorial.simpleinappbillingv3.domain.items.Passport;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
+/**
+ * This class should be the parent of any Activity that wants to do in app purchases
+ * it makes our life easier by wrapping up the talking to the IabHelper and just exposing what is needed.
+ * 
+ * When this activity starts it will bind to the Google Play IAB service and check for its availability
+ * 
+ * After that you can purchase items using purchaseItem(String sku) and listening for the result
+ * by overriding dealWithPurchaseFailed(IabResult result) and dealWithPurchaseSuccess(IabResult result, Purchase info)
+ * 
+ * @author Blundell
+ * 
+ */
 public abstract class PurchaseActivity extends BlundellActivity implements OnIabSetupFinishedListener, OnIabPurchaseFinishedListener {
 
     private IabHelper billingHelper;
@@ -21,10 +33,6 @@ public abstract class PurchaseActivity extends BlundellActivity implements OnIab
 
         billingHelper = new IabHelper(this, AppProperties.BASE_64_KEY);
         billingHelper.startSetup(this);
-    }
-
-    protected void purchaseItem(String sku) {
-        billingHelper.launchPurchaseFlow(this, sku, 123, this);
     }
 
     @Override
@@ -41,6 +49,10 @@ public abstract class PurchaseActivity extends BlundellActivity implements OnIab
     protected abstract void dealWithIabSetupSuccess();
 
     protected abstract void dealWithIabSetupFailure();
+
+    protected void purchaseItem(String sku) {
+        billingHelper.launchPurchaseFlow(this, sku, 123, this);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -6,6 +6,12 @@ import android.content.Intent;
 import com.blundell.tutorial.simpleinappbillingv3.ui.MainActivity;
 import com.blundell.tutorial.simpleinappbillingv3.ui.PurchasePassportActivity;
 
+/**
+ * A wrapper around the Android Intent mechanism
+ * 
+ * @author Blundell
+ * 
+ */
 public class Navigator {
 
     public static final int REQUEST_PASSPORT_PURCHASE = 2012;

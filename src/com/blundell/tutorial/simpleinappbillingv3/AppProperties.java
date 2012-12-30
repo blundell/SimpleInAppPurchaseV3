@@ -1,5 +1,11 @@
 package com.blundell.tutorial.simpleinappbillingv3;
 
+/**
+ * These are properties of the app, i.e your gplay keys, gmaps keys, adnetwork keys etc
+ * 
+ * @author Blundell
+ * 
+ */
 public class AppProperties {
 
     /**

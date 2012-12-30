@@ -10,6 +10,13 @@ import com.blundell.tutorial.simpleinappbillingv3.ui.base.BlundellActivity;
 import com.blundell.tutorial.simpleinappbillingv3.ui.utils.Navigator;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
+/**
+ * This activity holds the button to purchase a passport
+ * when the result is received if the passport was successfully purchase it shows the picture
+ * 
+ * @author Blundell
+ * 
+ */
 public class MainActivity extends BlundellActivity implements MainMenu {
 
     private ImageView passportImage;

@@ -3,6 +3,12 @@ package com.blundell.tutorial.simpleinappbillingv3.ui.utils;
 import android.content.Context;
 import android.widget.Toast;
 
+/**
+ * A wrapper around the Android Toast
+ * 
+ * @author Blundell
+ * 
+ */
 public class Toaster {
 
     private final Context context;
