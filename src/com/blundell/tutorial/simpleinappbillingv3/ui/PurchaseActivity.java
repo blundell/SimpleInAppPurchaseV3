@@ -1,9 +1,10 @@
 package com.blundell.tutorial.simpleinappbillingv3.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 
-public class PurchaseActivity extends Activity {
+import com.blundell.tutorial.simpleinappbillingv3.ui.base.BlundellActivity;
+
+public class PurchaseActivity extends BlundellActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,13 +1,13 @@
 package com.blundell.tutorial.simpleinappbillingv3.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.blundell.tutorial.simpleinappbillingv3.R;
+import com.blundell.tutorial.simpleinappbillingv3.ui.base.BlundellActivity;
 
-public class MainActivity extends Activity implements MainMenu {
+public class MainActivity extends BlundellActivity implements MainMenu {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class MainActivity extends Activity implements MainMenu {
     }
 
     @Override
-    public void onPurchaseItemClick(View v){
+    public void onPurchaseItemClick(View v) {
         Intent intent = new Intent(this, PurchaseActivity.class);
         startActivity(intent);
     }
