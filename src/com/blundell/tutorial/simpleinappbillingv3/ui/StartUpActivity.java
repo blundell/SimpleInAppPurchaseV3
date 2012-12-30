@@ -31,6 +31,7 @@ public class StartUpActivity extends BlundellActivity implements OnIabSetupFinis
 
     private void dealWithIabSetupSuccess() {
         gotoMainActivity();
+        finish();
     }
 
     private void gotoMainActivity() {
