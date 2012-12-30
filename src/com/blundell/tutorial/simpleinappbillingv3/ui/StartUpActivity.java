@@ -5,17 +5,15 @@ import android.os.Bundle;
 
 import com.android.vending.billing.util.IabHelper.OnIabSetupFinishedListener;
 import com.android.vending.billing.util.IabResult;
-import com.blundell.tutorial.simpleinappbillingv3.ui.base.BlundellActivity;
+import com.blundell.tutorial.simpleinappbillingv3.ui.base.PurchaseActivity;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
-public class StartUpActivity extends BlundellActivity implements OnIabSetupFinishedListener {
+public class StartUpActivity extends PurchaseActivity implements OnIabSetupFinishedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("App started");
-
-        getBillingHelper().startSetup(this);
     }
 
     @Override
@@ -29,7 +27,8 @@ public class StartUpActivity extends BlundellActivity implements OnIabSetupFinis
         }
     }
 
-    private void dealWithIabSetupSuccess() {
+    @Override
+    protected void dealWithIabSetupSuccess() {
         gotoMainActivity();
         finish();
     }
@@ -39,7 +38,8 @@ public class StartUpActivity extends BlundellActivity implements OnIabSetupFinis
         startActivity(intent);
     }
 
-    private void dealWithIabSetupFailure() {
+    @Override
+    protected void dealWithIabSetupFailure() {
         popBurntToast("Sorry In App Purchase isn't available on your device");
     }
 }

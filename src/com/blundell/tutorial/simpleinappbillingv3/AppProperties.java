@@ -1,6 +1,6 @@
 package com.blundell.tutorial.simpleinappbillingv3;
 
-public class BillingConstants {
+public class AppProperties {
 
     /**
      * MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArFKsWOCguKlHkKngnwp3JFU/VF+ChVUNSgNlWdOXPKoW+

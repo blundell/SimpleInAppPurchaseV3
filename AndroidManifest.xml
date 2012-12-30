@@ -28,7 +28,7 @@
       android:name="com.blundell.tutorial.simpleinappbillingv3.ui.MainActivity"
       android:label="@string/activity_main_label" />
     <activity
-      android:name="com.blundell.tutorial.simpleinappbillingv3.ui.PurchaseActivity"
+      android:name="com.blundell.tutorial.simpleinappbillingv3.ui.PurchasePassportActivity"
       android:label="@string/activity_purchase_label" />
   </application>
 

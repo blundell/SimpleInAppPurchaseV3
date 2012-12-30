@@ -1,44 +1,32 @@
 package com.blundell.tutorial.simpleinappbillingv3.ui.base;
 
 import android.app.Activity;
-import android.widget.Toast;
+import android.os.Bundle;
 
-import com.android.vending.billing.util.IabHelper;
-import com.blundell.tutorial.simpleinappbillingv3.BillingConstants;
+import com.blundell.tutorial.simpleinappbillingv3.ui.utils.Toaster;
 
-public class BlundellActivity extends Activity {
+public abstract class BlundellActivity extends Activity {
 
-    private IabHelper billingHelper;
+    private Toaster toaster;
 
-    protected IabHelper getBillingHelper() {
-        if (billingHelper == null) {
-            billingHelper = new IabHelper(this, BillingConstants.BASE_64_KEY);
-        }
-        return billingHelper;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        toaster = new Toaster(this);
     }
 
     protected void popBurntToast(String msg) {
-        makeToast(msg, Toast.LENGTH_LONG).show();
+        toaster.popBurntToast(msg);
     }
 
     protected void popToast(String msg) {
-        makeToast(msg, Toast.LENGTH_SHORT).show();
-    }
-
-    private Toast makeToast(String msg, int length) {
-        return Toast.makeText(this, msg, length);
+        toaster.popToast(msg);
     }
 
     @Override
     protected void onDestroy() {
-        disposeBillingHelper();
         super.onDestroy();
-    }
-
-    private void disposeBillingHelper() {
-        if (billingHelper != null) {
-            billingHelper.dispose();
-        }
-        billingHelper = null;
+        toaster = null;
     }
 }
