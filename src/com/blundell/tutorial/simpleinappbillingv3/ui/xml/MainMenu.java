@@ -1,4 +1,4 @@
-package com.blundell.tutorial.simpleinappbillingv3.ui;
+package com.blundell.tutorial.simpleinappbillingv3.ui.xml;
 
 import android.view.View;
 

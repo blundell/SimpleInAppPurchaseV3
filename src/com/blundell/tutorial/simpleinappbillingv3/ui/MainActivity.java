@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.blundell.tutorial.simpleinappbillingv3.R;
 import com.blundell.tutorial.simpleinappbillingv3.ui.base.BlundellActivity;
 import com.blundell.tutorial.simpleinappbillingv3.ui.utils.Navigator;
+import com.blundell.tutorial.simpleinappbillingv3.ui.xml.MainMenu;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
 /**
