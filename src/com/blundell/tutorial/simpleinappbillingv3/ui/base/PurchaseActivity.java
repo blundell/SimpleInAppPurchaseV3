@@ -7,6 +7,7 @@ import com.android.vending.billing.util.*;
 import com.android.vending.billing.util.IabHelper.OnIabPurchaseFinishedListener;
 import com.android.vending.billing.util.IabHelper.OnIabSetupFinishedListener;
 import com.blundell.tutorial.simpleinappbillingv3.AppProperties;
+import com.blundell.tutorial.simpleinappbillingv3.R;
 import com.blundell.tutorial.simpleinappbillingv3.domain.items.Passport;
 import com.blundell.tutorial.simpleinappbillingv3.util.Log;
 
@@ -29,6 +30,7 @@ public abstract class PurchaseActivity extends BlundellActivity implements OnIab
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_purchase);
         setResult(RESULT_CANCELED);
 
         billingHelper = new IabHelper(this, AppProperties.BASE_64_KEY);
