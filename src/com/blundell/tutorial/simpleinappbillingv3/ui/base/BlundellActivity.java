@@ -28,4 +28,17 @@ public class BlundellActivity extends Activity {
     private Toast makeToast(String msg, int length) {
         return Toast.makeText(this, msg, length);
     }
+
+    @Override
+    protected void onDestroy() {
+        disposeBillingHelper();
+        super.onDestroy();
+    }
+
+    private void disposeBillingHelper() {
+        if (billingHelper != null) {
+            billingHelper.dispose();
+        }
+        billingHelper = null;
+    }
 }
